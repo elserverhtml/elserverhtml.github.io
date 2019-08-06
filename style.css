@@ -241,7 +241,7 @@ td{
     position: absolute;
     width: 30%;
     height: Calc(100% - 20px);
-    border: 1px #235eff solid;
+    border: 3px #372D25 solid;
 }
 
 .imageBlock:nth-child(2){
