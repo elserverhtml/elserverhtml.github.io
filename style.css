@@ -1,4 +1,4 @@
-.progresbar{
+.progresbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     z-index: 4;
 }
 
-.currentprogres{
+.currentprogres {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,26 +19,7 @@
     transition: transform .5s linear;
 }
 
-ARTICLE{
-    position:fixed;
-    top: 4px;
-    background:#fff;
-    width: 96%;
-    bottom: 0;
-    padding: 2%;
-    transition: transform .5s linear;
-    overflow:auto;
-}
-#Ar1{
-    left:0%;
-}
-#Ar2{
-    left:100%;
-}
-#Ar3{
-    left:100%;
-}
-BODY{
+BODY {
     background:#666;
     font-family: "Open Sans",Arial,sans-serif;
     font-size: 16px;
@@ -46,23 +27,29 @@ BODY{
     line-height: 1.75
 }
 
+ARTICLE {
+    position: fixed;
+    top: 4px;
+    background: #fff;
+    width: 96%;
+    bottom: 0;
+    padding: 2%;
+    transition: transform .5s linear;
+    overflow: auto;
+}
 
-.btns{
+.btns {
     position: relative;
     left: 0;
     right: 0;
     bottom: 0;
     height: 47px;
     text-align: center;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
     display: flex;
     justify-content: space-around;
 }
 
-.btn{
+.btn {
     width: 150px;
     height: 45px;
     background: #fff;
@@ -73,162 +60,64 @@ BODY{
     user-select: none;
 }
 
-.btn b{
+.btn b {
     font-size: 24px;
 }
 
-.btn:hover{
+.btn:hover {
     background: #235eff50;
     cursor: pointer;
 }
 
-#Ar4{
+#Ar1 {
+    left: 0%;
+}
+
+#Ar2 {
     left: 100%;
+}
+
+#Ar3 {
+    left: 100%;
+    padding: 0 0 2% 0;
     width: 100%;
-    height: Calc((100% - 4px) * 2);
-    padding: 0;
+}
+
+.section {
+    width: 100%;
+    margin: 20px 0 40px 0;
+}
+
+.sectionWindow {
+    position: relative;
+    left: 2%;
+    width: 96%;
+    max-height: 1012px;
     overflow: hidden;
+    transition-property: max-height;
+    transition-timing-function: linear;
+    transition-duration: .5s;
 }
 
-.questionBody{
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    top: 50%;
-    background: #333;
-    transition: transform .5s linear;
-}
-
-.question{
+.nameOfSection {
     position: relative;
-    top: 0;
-    left: 0;
-    height: 50%;
-    width: 100%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #333;
-}
-
-.question span{
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
-.answers{
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 50%;
-    width: 100%;
-    background: #333;
-    text-align: center;
-}
-
-.answer{
-    background: #fff;
-    margin: auto;
-    border-radius: 4px;
-    display: inline-block;
-    padding: 8px 14px;
-    min-width: 180px;
-    transition: background .1s linear;
-}
-
-.answer:hover{
-    background: #235eff;
-}
-
-.answer:hover h4{
-    color: white;
-}
-
-.answer h4{
-    margin: 0;
-    color: #333;
-    transition: color .1s linear;
-}
-
-table{
-    width: 100%;
-    height: 100%;
-    border-spacing: 10px 0;
-}
-
-td{
-    width: 50%;
-}
-
-.statname{
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 70px;
-    width: 100%;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: #fff;
-    color: #333;
-}
-
-.statname span{
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
-.statlist{
-    height: 90%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.list{
-    position: absolute;
-    top: 1%;
-    min-height: 98%;
+    left: 2%;
     width: 96%;
-    background: #e3e3e3;
-    max-width: 570px;
-    border-radius: 8px;
-}
-
-.questionStat {
-    position: relative;
-    width: 96%;
-    height: 40px;
+    height: 90px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 5px grey;
     display: flex;
-    margin: 6px auto;
-    background: #ff3636;
-    border-radius: 8px;
-}
-
-.questionStat:hover{
-    background: #ff6f6f;
-}
-
-.questionName {
-    padding: 0 0 0 14px;
-    text-align: left;
-    flex-grow: 1;
-    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.yourAnswerBlock {
-    padding: 0 14px 0 0;
-    text-align: right;
-    flex-grow: 2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.nameOfSection:first-child {
+    margin-top: 0;
+}
+
+.nameOfSection span {
+    font-size: 40px;
 }
 
 .imageContainer {
@@ -244,15 +133,15 @@ td{
     border: 1px #235eff solid;
 }
 
-.imageBlock:nth-child(2){
-    left: 35%;
+.imageBlock:nth-child(2) {
+    left: Calc(35% - 1px);
 }
 
-.imageBlock:nth-child(3){
-    left: 70%;
+.imageBlock:nth-child(3) {
+    left: Calc(70% - 2px);
 }
 
-.image{
+.image {
     width: 100%;
     height: 430px;
     display: flex;
@@ -265,7 +154,7 @@ img {
     max-height: 100%;
 }
 
-.imageName{
+.imageName {
     width: 100%;
     height: 56px;
     border-top: 1px #235eff solid;
@@ -276,27 +165,181 @@ img {
     color: #333;
 }
 
-.imageName span{
+.imageName span {
     margin: 0 6px;
     font-weight: bold;
 }
 
-.nameOfSection {
+.morebtn {
     position: relative;
-    left: 0;
-    right: 0;
-    height: 90px;
-    margin: 40px 0;
-    box-shadow: 0 5px 5px grey;
+    left: 2%;
+    width: Calc(96% - 2px);
+    height: 45px;
+    border: 1px #235eff solid;
+    color: #333;
+    background: #235eff10;
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
-.nameOfSection:first-child{
-    margin-top: 0;
+.morebtn span {
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.nameOfSection span{
-    font-size: 40px;
+.morebtn:hover {
+    background: #235eff50;
+    cursor: pointer;
+}
+
+#Ar4 {
+    left: 100%;
+    width: 100%;
+    height: Calc((100% - 4px) * 2);
+    padding: 0;
+    overflow: hidden;
+}
+
+.questionBody {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    background: #333;
+    transition: transform .5s linear;
+}
+
+.question {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+}
+
+.question span {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.answers {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background: #333;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    border-spacing: 10px 0;
+}
+
+td {
+    width: 50%;
+}
+
+.answer {
+    background: #fff;
+    margin: auto;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 8px 14px;
+    min-width: 180px;
+    transition: background .1s linear;
+}
+
+.answer:hover {
+    background: #235eff;
+}
+
+.answer:hover h4 {
+    color: white;
+}
+
+.answer h4 {
+    margin: 0;
+    color: #333;
+    transition: color .1s linear;
+}
+
+[class*="statistic"]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.statBlock {
+    position: absolute;
+    top: 1%;
+    min-height: 98%;
+    width: 96%;
+    background: #e3e3e3;
+    max-width: 570px;
+    border-radius: 8px;
+}
+
+.statName {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+    color: #333;
+}
+
+.statName span {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.statQuestionBlock {
+    position: relative;
+    width: 96%;
+    height: 40px;
+    display: flex;
+    margin: 6px auto;
+    background: #ff3636;
+    border-radius: 8px;
+}
+
+/*
+.statQuestionBlock:hover {
+    background: #ff6f6f;
+}
+*/
+
+.statQuestion {
+    padding: 0 0 0 14px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.statAnswerBlock {
+    padding: 0 14px 0 0;
+    text-align: right;
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
