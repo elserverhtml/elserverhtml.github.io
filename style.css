@@ -38,35 +38,101 @@ ARTICLE {
     overflow: auto;
 }
 
-.btns {
+.btnPageBlock {
     position: relative;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 47px;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-}
-
-.btn {
-    width: 150px;
     height: 45px;
-    background: #fff;
-    font-size: 18px;
-    border: 1px solid #235eff;
-    text-align: center;
-    transition: background .1s linear;
     user-select: none;
 }
 
-.btn b {
-    font-size: 24px;
+.btnPageBlock span {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
 }
 
-.btn:hover {
-    background: #235eff50;
+.btnPagePrev {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 10rem;
+    height: 45px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.btnPagePrevAdd {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 10rem;
+    height: 45px;
+    background: #e3e3e3;
+    border-radius: 8px;
+    transition: left .2s linear;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+}
+
+.btnPagePrev:hover ~ .btnPagePrevAdd{
+    left: Calc(20% - 40px);
     cursor: pointer;
+}
+
+.btnPagePrevAdd span {
+    position: relative;
+    top: -3px;
+    left: 6px;
+    font-size: 48px;
+}
+
+.btnPageNext {
+    position: absolute;
+    top: 0;
+    right: 20%;
+    width: 10rem;
+    height: 45px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.btnPageNextAdd {
+    position: absolute;
+    top: 0;
+    right: 20%;
+    width: 10rem;
+    height: 45px;
+    background: #e3e3e3;
+    border-radius: 8px;
+    transition: right .2s linear;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+}
+
+.btnPageNext:hover ~ .btnPageNextAdd{
+    right: Calc(20% - 40px);
+    cursor: pointer;
+}
+
+.btnPageNextAdd span {
+    position: relative;
+    top: -3px;
+    right: 6px;
+    font-size: 48px;
 }
 
 #Ar1 {
@@ -81,6 +147,7 @@ ARTICLE {
     left: 100%;
     padding: 0 0 2% 0;
     width: 100%;
+    background: #333;
 }
 
 .section {
@@ -107,6 +174,7 @@ ARTICLE {
     margin-top: 20px;
     margin-bottom: 40px;
     box-shadow: 0 5px 5px grey;
+    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,23 +198,27 @@ ARTICLE {
     position: absolute;
     width: 30%;
     height: Calc(100% - 20px);
-    border: 1px #235eff solid;
+    border-radius: 16px;
+    background: #e3e3e3;
 }
 
 .imageBlock:nth-child(2) {
-    left: Calc(35% - 1px);
+    left: 35%;
 }
 
 .imageBlock:nth-child(3) {
-    left: Calc(70% - 2px);
+    left: 70%;
 }
 
 .image {
     width: 100%;
     height: 430px;
+    border-radius: 16px;
+    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 img {
@@ -157,8 +229,6 @@ img {
 .imageName {
     width: 100%;
     height: 56px;
-    border-top: 1px #235eff solid;
-    background: #235eff10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,30 +240,70 @@ img {
     font-weight: bold;
 }
 
-.morebtn {
+.moreBtnBlock {
     position: relative;
     left: 2%;
-    width: Calc(96% - 2px);
+    width: 96%;
     height: 45px;
-    border: 1px #235eff solid;
     color: #333;
-    background: #235eff10;
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
 }
 
+.morebtn {
+    width: 40%;
+    height: 45px;
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.moreBtnBlock:hover {
+    cursor: pointer;
+}
+
+.morebtn:hover ~ .morebtnAddR {
+    right: 0;
+}
+
+.morebtn:hover ~ .morebtnAddL {
+    left: 0;
+}
+
+.morebtnAddL {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 36%;
+    height: 45px;
+    border-radius: 8px;
+    transition: left .2s linear;
+    background: #e3e3e3;
+    z-index: 2;
+}
+
+.morebtnAddR {
+    position: absolute;
+    top: 0;
+    right: 30%;
+    width: 36%;
+    height: 45px;
+    border-radius: 8px;
+    transition: right .2s linear;
+    background: #e3e3e3;
+    z-index: 2;
+}
+
 .morebtn span {
     font-size: 18px;
     font-weight: bold;
 }
-
-.morebtn:hover {
-    background: #235eff50;
-    cursor: pointer;
-}
-
+/* ---------------------------------- */
 #Ar4 {
     left: 100%;
     width: 100%;

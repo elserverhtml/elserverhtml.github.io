@@ -1,17 +1,17 @@
-function btnNextPage(numpage) {
-    var page = document.getElementById("Ar" + (numpage + 1)),
+function selectPage() {
+    var pages = document.getElementsByTagName("article"),
+        pagenum = Number.parseInt(this.dataset.page),
         progres = document.getElementsByClassName("currentprogres")[0];
     
-    page.style.transform = "translate(-100%)";
-    progres.style.transform = "translate(" + (100 * numpage) + "%)";
-}
-
-function btnPrevPage(numpage) {
-    var page = document.getElementById("Ar" + numpage),
-        progres = document.getElementsByClassName("currentprogres")[0];
+    for (let i = 1; i < pagenum; i++) {
+        pages[i].style.transform = "translate(-100%)";
+    }
     
-    page.style.transform = "translate(0)";
-    progres.style.transform = "translate(" + (100 * (numpage - 2)) + "%)";
+    for (let i = pagenum; i < pages.length; i++) {
+        pages[i].style.transform = "translate(0)";
+    }
+    
+    progres.style.transform = "translate(" + (100 * (pagenum - 1)) + "%)";
 }
 
 var RightAnswer = [
@@ -28,14 +28,10 @@ var RightAnswer = [
 ];
 
 function isRight(nQuestion, nAnswer) {
-    console.log(nQuestion + " " + nAnswer);
-    
     var elems = document.querySelectorAll(".answer");
     if (RightAnswer[nQuestion][0] === nAnswer) {
         elems[nQuestion * 4 + nAnswer - 1].style.background = "#36ff45";
         RightAnswer[nQuestion][1] = nAnswer;
-        
-        console.log(RightAnswer[nQuestion][1] + " " + nAnswer);
     } else {
         elems[nQuestion * 4 + nAnswer - 1].style.background = "#ff3636";
         RightAnswer[nQuestion][1] = nAnswer;
@@ -56,7 +52,7 @@ function isRight(nQuestion, nAnswer) {
 
 function btnMore() {
     var Height = "",
-        charsH = this.previousElementSibling.style.maxHeight.split('');
+        charsH = this.parentElement.previousElementSibling.style.maxHeight.split('');
     
     for (let i = 0; i < charsH.length - 2; i++) {
         Height += charsH[i];
@@ -64,22 +60,22 @@ function btnMore() {
     
     Height = Number.parseInt(Height);
     
-    if (Height >= this.previousElementSibling.children.length * 506) {
+    if (Height >= this.parentElement.previousElementSibling.children.length * 506) {
         Height = 506 * 2;
-    } else if (Height < this.previousElementSibling.children.length * 506 && Height > 0) {
+    } else if (Height < this.parentElement.previousElementSibling.children.length * 506 && Height > 0) {
         Height += 506 * 2;
     } else {
         Height = 506 * 4;
     }
     
-    if (Height >= this.previousElementSibling.children.length * 506) {
-        this.firstChild.innerHTML = "&uarr; Свернуть &uarr;";
+    if (Height >= this.parentElement.previousElementSibling.children.length * 506) {
+        this.firstChild.innerHTML = "Свернуть";
     } else {
-        this.firstChild.innerHTML = "&darr; Развернуть &darr;";
+        this.firstChild.innerHTML = "Развернуть";
     }
     
     Height += "px";
-    this.previousElementSibling.style.maxHeight = Height;
+    this.parentElement.previousElementSibling.style.maxHeight = Height;
 }
 
 function getStat() {
@@ -118,16 +114,26 @@ function openCorrectAnswer() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll(".answer");
-    for (let i = 0; i < elems.length; i++) {
-        elems[i].onclick = function () {
-            console.log(Math.floor(i/4) + " " + i%4 + 1);
+    var answer = document.querySelectorAll(".answer");
+    for (let i = 0; i < answer.length; i++) {
+        answer[i].onclick = function () {
             isRight(Math.floor(i/4), i%4 + 1);
         };
     }
     
     for (i = 0; i < document.getElementsByClassName("morebtn").length; ++i) {
         document.getElementsByClassName("morebtn")[i].addEventListener("click", btnMore);
+    }
+    
+    var pagebtnN = document.getElementsByClassName("btnPageNext"),
+        pagebtnP = document.getElementsByClassName("btnPagePrev");
+    
+    for (let i = 0; i < pagebtnN.length; i++) {
+        pagebtnN[i].addEventListener("click", selectPage);
+    }
+    
+    for (let i = 0; i < pagebtnP.length; i++) {
+        pagebtnP[i].addEventListener("click", selectPage);
     }
 });
 
