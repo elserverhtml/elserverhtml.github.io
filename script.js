@@ -47,7 +47,7 @@ function isRight(nQuestion, nAnswer) {
     setTimeout(function () {
         elems = document.querySelectorAll(".questionBody");
         elems[nQuestion + 1].style.transform = "translateY(-100%)";
-    }, 1);
+    }, 1000);
     
     if (nQuestion === 19) {
         getStat();
