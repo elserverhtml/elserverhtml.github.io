@@ -126,7 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     var pagebtnN = document.getElementsByClassName("btnPageNext"),
-        pagebtnP = document.getElementsByClassName("btnPagePrev");
+        pagebtnP = document.getElementsByClassName("btnPagePrev"),
+        pagebtnE = document.getElementsByClassName("entryBtn");
     
     for (let i = 0; i < pagebtnN.length; i++) {
         pagebtnN[i].addEventListener("click", selectPage);
@@ -134,6 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
     
     for (let i = 0; i < pagebtnP.length; i++) {
         pagebtnP[i].addEventListener("click", selectPage);
+    }
+    
+    for (let i = 0; i < pagebtnE.length; i++) {
+        pagebtnE[i].addEventListener("click", selectPage);
     }
 });
 

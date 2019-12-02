@@ -24,13 +24,13 @@ BODY {
     font-family: "Open Sans",Arial,sans-serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.75
+    line-height: 1.75;
 }
 
 ARTICLE {
     position: fixed;
     top: 4px;
-    background: #fff;
+    background: #333;
     width: 96%;
     bottom: 0;
     padding: 2%;
@@ -139,15 +139,165 @@ ARTICLE {
     left: 0%;
 }
 
+.flexBox {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.entryName {
+    position: relative;
+    width: 100%;
+    min-height: 90px;
+    background: #fff;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entryName span {
+    font-size: 32px;
+}
+
+.entryBtns {
+    position: relative;
+    flex-grow: 3;
+}
+
+.entryBtnsBlock {
+    position: absolute;
+    top: Calc(50% - 175px);
+    left: Calc(50% - 250px);
+    width: 500px;
+    height: 350px;
+}
+
+.entryBtns span {
+    font-size: 28px;
+}
+
+.entryBtn {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    height: 90px;
+    background: #fff;
+    border-radius: 16px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.entryBtn:hover {
+    cursor: pointer;
+}
+
+.entryBtn:nth-child(1):hover ~ .entryBtnAdd:nth-child(2) {
+    left: 62%;
+}
+
+.entryBtn:nth-child(3):hover ~ .entryBtnAdd:nth-child(4) {
+    left: 62%;
+}
+
+.entryBtn:nth-child(5):hover ~ .entryBtnAdd:nth-child(6) {
+    left: 62%;
+}
+
+.entryBtnAdd {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 90px;
+    background: #e3e3e3;
+    border-radius: 16px;
+    margin: 20px 0;
+    transition: left .2s linear;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.entryBtnAdd span {
+    position: relative;
+    top: -7px;
+    font-size: 90px;
+}
+
+.entryBtnAdd:nth-child(4) {
+    top: 110px;
+}
+
+.entryBtnAdd:nth-child(6) {
+    top: 220px;
+}
+
 #Ar2 {
     left: 100%;
+}
+
+biography {
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+.nameOfBiography {
+    position: relative;
+    width: 100%;
+    min-height: 90px;
+    background: #fff;
+    margin: 0 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.biographyWindows {
+    width: Calc(100% - 40px);
+    border-radius: 16px;
+    color: #333;
+}
+
+.paragraph {
+    width: 100%;
+    border-radius: 16px;
+    background: #fff;
+    padding: 1px 20px;
+    margin: 30px 0;
+}
+
+.biographyImageContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.biographyImageBlock {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    border-radius: 16px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 #Ar3 {
     left: 100%;
     padding: 0 0 2% 0;
     width: 100%;
-    background: #333;
 }
 
 .section {
@@ -420,14 +570,20 @@ td {
 }
 
 [class*="statistics"]{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: auto;
 }
 
+.addBlock {
+    position: relative;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .statBlock {
-    position: absolute;
+    position: relative;
     top: 1%;
     min-height: 98%;
     width: 96%;
