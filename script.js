@@ -92,6 +92,7 @@ function getStat() {
             
             statlist[i].parentElement.parentElement.parentElement.onmouseover = function () {
                 this.firstElementChild.style.background = "#ff6f6f";
+                this.style.cursor = 'pointer';
             }
             
             statlist[i].parentElement.parentElement.parentElement.onmouseout = function () {
