@@ -50,6 +50,12 @@ function isRight(nQuestion, nAnswer) {
     }
 }
 
+function toFinish() {
+    var elems = document.querySelectorAll(".questionBody");
+    elems[elems.length - 1].style.transform = "translateY(-100%)";
+    getStat();
+}
+
 function btnMore() {
     var Height = "",
         charsH = this.parentElement.previousElementSibling.style.maxHeight.split('');
@@ -83,25 +89,41 @@ function getStat() {
         answers = document.getElementsByClassName("answer"),
         rightAns = document.getElementsByClassName("statRightAnswer");
     for (let i = 0; i < statlist.length; i++) {
-        statlist[i].innerHTML = answers[i*4 + RightAnswer[i][1] - 1].firstChild.innerHTML;
         
-        console.log(i + " " + (i*4 + RightAnswer[i][1] - 1) + " " + RightAnswer[i][1]);
+        if (RightAnswer[i][1] != 0)
+        statlist[i].innerHTML = answers[i*4 + RightAnswer[i][1] - 1].firstChild.innerHTML;
+        else statlist[i].innerHTML = "Нет ответа";
         
         if (RightAnswer[i][0] != RightAnswer[i][1]) {
-            statlist[i].parentElement.parentElement.style.background = "#ff3636";
-            
-            statlist[i].parentElement.parentElement.parentElement.onmouseover = function () {
-                this.firstElementChild.style.background = "#ff6f6f";
-                this.style.cursor = 'pointer';
-            }
-            
-            statlist[i].parentElement.parentElement.parentElement.onmouseout = function () {
-                this.firstElementChild.style.background = "#ff3636";
-            }
+            if (RightAnswer[i][1] != 0) {
+                statlist[i].parentElement.parentElement.style.background = "#ff3636";
+
+                statlist[i].parentElement.parentElement.parentElement.onmouseover = function () {
+                    this.firstElementChild.style.background = "#ff6f6f";
+                    this.style.cursor = 'pointer';
+                }
+
+                statlist[i].parentElement.parentElement.parentElement.onmouseout = function () {
+                    this.firstElementChild.style.background = "#ff3636";
+                }
+            } else {
+                statlist[i].parentElement.parentElement.style.background = "#ffc017";
+
+                statlist[i].parentElement.parentElement.parentElement.onmouseover = function () {
+                    this.firstElementChild.style.background = "#ffd156";
+                    this.style.cursor = 'pointer';
+                }
+
+                statlist[i].parentElement.parentElement.parentElement.onmouseout = function () {
+                    this.firstElementChild.style.background = "#ffc017";
+                }
+            } 
             
             rightAns[i].innerHTML = answers[i*4 + RightAnswer[i][0] - 1].firstChild.innerHTML;
             
             statlist[i].parentElement.parentElement.parentElement.addEventListener("click", openCorrectAnswer);
+        } else if (RightAnswer[i][0] === RightAnswer[i][1]) {
+            statlist[i].parentElement.parentElement.style.background = "#36ff45";
         }
     }
 }
@@ -129,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var pagebtnN = document.getElementsByClassName("btnPageNext"),
         pagebtnP = document.getElementsByClassName("btnPagePrev"),
         pagebtnE = document.getElementsByClassName("entryBtn"),
-        pagebtnQ = document.getElementsByClassName("mainPage");
+        pagebtnQ = document.getElementsByClassName("toFinish");
     
     for (let i = 0; i < pagebtnN.length; i++) {
         pagebtnN[i].addEventListener("click", selectPage);
@@ -144,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     for (let i = 0; i < pagebtnQ.length; i++) {
-        pagebtnQ[i].addEventListener("click", selectPage);
+        pagebtnQ[i].addEventListener("click", toFinish);
     }
 });
 

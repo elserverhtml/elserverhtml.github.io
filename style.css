@@ -557,7 +557,7 @@ img {
     background: linear-gradient(to left, #333, #fff);
 }
 
-.mainPage {
+.toFinish {
     position: absolute;
     top: 0;
     right: 0;
@@ -571,7 +571,7 @@ img {
     cursor: pointer;
 }
 
-.mainPage:hover span {
+.toFinish:hover span {
     color: #235eff;
 }
 
@@ -683,7 +683,7 @@ td {
     width: 100%;
     height: 40px;
     border-radius: 8px;
-    background: #36ff45;
+    background: #ffc017;
     display: flex;
 }
 
