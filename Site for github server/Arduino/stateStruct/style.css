@@ -1,0 +1,25 @@
+BODY{
+    margin: 0;
+/*    background: #222226;*/
+}
+
+HEADER{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 54px;
+    background: #00979d;
+/*    background: #333336;*/
+}
+
+.divsvg{
+    background-image: url(../res/arduino-compressed-white.svg);
+/*    background-image: url(../res/arduino-black.svg);*/
+    background-position: 20px 11px;
+    background-repeat: no-repeat,no-repeat;
+    background-size: 58px 32px;
+    width: 32px;
+    height: 43px;
+    padding: 11px 30px;
+}

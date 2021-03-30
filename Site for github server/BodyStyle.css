@@ -1,0 +1,84 @@
+body {
+    background: #1f1f1f;
+    margin: 0;
+    transition: background 1s linear;
+}
+
+header {
+    position: relative;
+    top: -72px;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: #3b3b3b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .3s linear, background 1s linear;
+}
+
+.pageLogo {
+    position: absolute;
+    top: -72px;
+    left: 0;
+    height: 72px;
+    transition: all .3s linear;
+}
+
+@font-face {
+    font-family: xthlx;
+    src: url(Xthlx.otf);
+}
+
+.pageName {
+    position: relative;
+    top: -72px;
+    font-size: 3vw;
+    font-family: xthlx;
+    letter-spacing: 8px;
+    font-weight: 600;
+    transition: transform .3s linear, text-shadow .3s linear;
+}
+
+@media screen and (min-width: 824px) {
+    .pageName {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .pageName {
+        font-size: 36px;
+    }
+}
+
+.greeting {
+    color: #00beff;
+}
+
+/*
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+font-family: Comfortaa;
+*/
+
+.ArduinoBody {
+    background: #fff;
+}
+
+.ArduinoHeader {
+    background: #00979d;
+}
+
+.ArduinoLogo {
+    background-image: url(Arduino/res/arduino-compressed-white.svg);
+    background-position: 20px 13px;
+    background-repeat: no-repeat,no-repeat;
+    background-size: 86px 47px;
+    width: 134px;
+}
+
+.ArduinoName {
+    top: -78px;
+    color: #fff;
+    font-size: 54px;
+}

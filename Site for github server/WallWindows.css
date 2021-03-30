@@ -1,0 +1,110 @@
+[class*="wallWindows"] {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .3s linear;
+}
+
+[class$="wall"] {
+    position: relative;
+    width: 100vw;
+    height: Calc(56.25vw - 72px);
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+    [class$="wall"] {
+        width: 177.78vh;
+        height: Calc(100vh - 72px);
+    }
+}
+
+[class*="poster"] {
+    position: relative;
+    height: 100%;
+    width: 33.3%;
+    max-width: 60%;
+    transform: skewX(-30deg);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-out, transform .3s linear;
+}
+
+[class*="poster"]  img {
+    position: absolute;
+    left: 50%;
+    width: 200%;
+    height: 100%;
+    object-fit: cover;
+    transform: skewX(30deg) translateX(-50%);
+}
+
+[class*="textArea"] {
+    position: absolute;
+    width: 130%;
+    height: 20%;
+    background: #00beffdf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: skewX(30deg);
+    transition: height .2s linear;
+}
+
+[class*="textArea"] span {
+    font-family: xthlx;
+    color: #3b3b3b;
+    font-size: 2.8vw;
+    font-weight: 600;
+    letter-spacing: 8px;
+    transition: text-shadow .2s linear, color .2s linear;
+    
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+    [class*="textArea"] span {
+        font-size: 38px;
+    }
+}
+
+.poster:hover span {
+    color: #fff;
+    text-shadow: #fff 0 0 15px;
+}
+
+.poster:hover .textArea {
+    height: 25%;
+}
+
+/* ------- shadow zone ------- */
+
+.sh-wallWindows {
+    display: none;
+    transition: opacity .3s linear;
+}
+
+.sh-poster {
+    opacity: 1;
+    visibility: hidden;
+    transition: width .3s linear;
+}
+
+.sh-textArea {
+    height: 25%;
+}
+
+.sh-textArea span {
+    color: #fff;
+    text-shadow: #fff 0 0 15px;
+}
+
+/* ------- /shadow zone ------- */

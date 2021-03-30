@@ -1,0 +1,157 @@
+.cellBlock {
+    position: relative;
+    width: 420px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    border: #00979d 1px solid;
+    border-radius: 1em;
+    box-shadow: grey 8px 8px 8px;
+    background: #e6e6e6;
+    overflow: hidden;
+    transition: box-shadow .2s linear, top .2s linear, left .2s linear;
+}
+
+.cell:hover {
+    top: 3px;
+    left: 3px;
+    box-shadow: grey 5px 5px 5px;
+}
+
+.cell > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cellPostAttr {
+    position: absolute;
+    left: -16px;
+    bottom: 0;
+    max-width: Calc(100% - 16px);
+    max-height: 416px;
+    background: #00979d;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: skewX(-20deg);
+    transition: transform .3s ease-out;
+}
+
+.cellPostAttr span {
+    color: #fff;
+    line-height: 1.6;
+    font-family: Typonine Sans Light,Lucida Grande,Lucida,Verdana,sans-serif;
+    word-wrap: break-word;
+}
+
+.section {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    transform: skewX(20deg);
+}
+
+.title {
+    position: relative;
+    left: 13px;
+    margin-right: 13px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    display: block;
+    transform: skewX(20deg);
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30px;
+}
+
+.arrowImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(res/arr.svg);
+    animation-duration: .4s;
+    animation-timing-function: ease-out;
+}
+
+.cell:hover .arrowImg {
+    animation-name: arrowAnimation2;
+}
+
+@keyframes arrowAnimation2 {
+    0% {background: url(res/arr.svg);}
+    33% {background: url(res/arr1.svg);}
+    66% {background: url(res/arr2.svg);}
+    100% {background: url(res/arr.svg);}
+}
+
+.cellSlide {
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    transition: top .3s ease-in;
+    z-index: 3;
+}
+
+.hover {
+    transition: top .7s ease-out;
+    top: 0;
+}
+
+.cellDescriptionBlock {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 10px;
+    border-radius: 1em;
+    box-sizing: border-box;
+    transition: transform .3s ease-out;
+}
+
+.cellDescriptionBlock span {
+    color: #00979d;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    font-family: Typonine Sans Light,Lucida Grande,Lucida,Verdana,sans-serif;
+    word-wrap: break-word;
+}
+
+.arrowReturn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    display: none;
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+
+.visible {
+    display: block;
+    opacity: 1;
+}
