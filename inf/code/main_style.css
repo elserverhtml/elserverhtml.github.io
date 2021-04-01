@@ -1,0 +1,164 @@
+.row {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 0 20px;
+    border-radius: 25px;
+    box-shadow: grey 1px 1px 5px;
+    transition: box-shadow ease 0.25s, transform ease 0.25s;
+}
+
+.cell::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.wide {
+    width: 700px;
+    grid-template-rows: auto;
+    grid-template-columns: 350px 350px;
+}
+
+.c1 {
+    background: var(--main-blue);
+}
+
+.c2 {
+    background: var(--main-grey);
+}
+
+.c3 {
+    background: var(--main-red);
+}
+
+.c4 {
+    background: var(--main-green);
+}
+
+.collage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.collage .imgContainer:nth-child(1) {
+    position: absolute;
+    top: 180px;
+    left: 30px;
+    transform: rotate(10grad);
+}
+
+.collage .imgContainer:nth-child(2) {
+    position: absolute;
+    top: 35px;
+    left: 130px;
+    transform: rotate(-7grad);
+}
+
+.collage .imgContainer:nth-child(3) {
+    position: absolute;
+    top: 130px;
+    left: 290px;
+    transform: rotate(5grad);
+}
+
+.collage .imgContainer:nth-child(4) {
+    position: absolute;
+    top: 10px;
+    left: 450px;
+    transform: rotate(2grad);
+}
+
+.collage .imgContainer:nth-child(5) {
+    position: absolute;
+    top: 160px;
+    left: 530px;
+    transform: rotate(-6grad);
+}
+
+.c4 .imgContainer:nth-child(1) {
+    transform: rotate(-4grad) !important;
+}
+
+.c4 .imgContainer:nth-child(2) {
+    transform: rotate(6grad) !important;
+}
+
+.c4 .imgContainer:nth-child(3) {
+    transform: rotate(-9grad) !important;
+}
+
+.c4 .imgContainer:nth-child(4) {
+    transform: rotate(-12grad) !important;
+}
+
+.c4 .imgContainer:nth-child(5) {
+    transform: rotate(6grad) !important;
+}
+
+.cell:hover img {
+    transform: rotate(6grad);
+}
+
+.cell:hover .imgContainer:nth-child(3n + 1) img {
+    transform: rotate(-6grad) !important;
+}
+
+.cell:hover {
+    box-shadow: grey 5px 5px 5px;
+    transform: translate(-5px,-5px);
+}
+
+.imgContainer img {
+    height: 120px;
+}
+
+.imgContainer img, .imgContainer, .imgIcon {
+    transition: transform ease 0.75s;
+}
+
+.icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgIcon {
+    height: 80%;
+    padding: 20px 0 0;
+}
+
+.discription {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(100, 100, 100);
+}

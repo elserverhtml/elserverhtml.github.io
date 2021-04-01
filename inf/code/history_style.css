@@ -1,0 +1,20 @@
+.curveBlock {
+    width: calc(100% - 400px);
+    padding: 20px;
+    background: var(--main-blue);
+    margin: 20px;
+}
+
+.curveBlock:nth-child(2) {
+    background: var(--main-green);
+}
+
+.curveBlock p {
+    font-size: 22px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
