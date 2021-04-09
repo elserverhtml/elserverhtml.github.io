@@ -1,15 +1,21 @@
-.curveBlock {
-    width: calc(100% - 400px);
-    padding: 20px;
-    background: var(--main-blue);
-    margin: 20px;
+body {
+    background: rgb(255, 251, 238);
 }
 
-.curveBlock:nth-child(2) {
-    background: var(--main-green);
+header {
+    background: rgb(252, 223, 119);
+    box-shadow: 0px 3px 4px rgb(177, 153, 68);
 }
 
-.curveBlock p {
+header p {
+    background-color: rgb(177, 153, 68);
+}
+
+.paper:nth-child(2) {
+    background: var(--main-cyan);
+}
+
+.paper p {
     font-size: 22px;
 }
 
@@ -17,4 +23,113 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.paper {
+	width: calc(100% - 400px);
+	padding: 40px;
+    margin: 20px;
+	position: relative;
+	background:#fff;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-top-left-radius:60px 5px;
+	border-top-right-radius:60px 5px;
+	border-bottom-right-radius: 60px 60px;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3) ;
+}
+
+.paper:nth-child(1) .tape:before {
+    top: 15px;
+    left: -35px;
+    transform: rotate(-45deg);
+}
+
+.paper:nth-child(1) .tape:after {
+    bottom: 180px;
+    right: -65px;
+    transform: rotate(90deg);
+}
+
+.paper:nth-child(2) .tape:before {
+    top: 150px;
+    left: -65px;
+    transform: rotate(90deg);
+}
+
+.paper:nth-child(2) .tape:after {
+    bottom: 400px;
+    right: -65px;
+    transform: rotate(70deg);
+}
+
+.paper:nth-child(3) .tape:before {
+    top: 15px;
+    left: -35px;
+    transform: rotate(-45deg);
+}
+
+.paper:nth-child(3) .tape:after {
+    bottom: -20px;
+    right: 150px;
+    transform: rotate(-30deg);
+}
+
+/* Нижний правый загиб */
+.paper:before{
+	content:'';
+	width: 25px;
+	height: 20px;
+	position: absolute;
+	bottom:0;
+	right:0;
+	border-bottom-right-radius: 30px;
+	box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.3);
+	transform:	rotate(-20deg) skew(-40deg,-3deg) translate(-13px,-13px);
+}
+
+/* Тень загиба */
+.paper:after{
+	content: '';
+	z-index: -10;
+	width: 100px;
+	height: 100px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	background: rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	box-shadow: 20px 20px 8px rgba(0, 0, 0, 0.2);
+	transform: translate(-45px,-20px) skew(20deg);
+}
+
+/* Левая прозрачная ленточка */
+.tape:before{
+	content: '';
+	position:absolute;
+	width: 130px;
+	height: 40px;
+	background:rgba(0,0,0,0.2);
+	background: gradient(linear, 555% 20%, 0% 92%, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.0)), color-stop(.1,rgba(0, 0, 0, 0.2)));
+	background: gradient(555% 0% 180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.2) 10%, rgba(0,0,0,0.0));
+	border-left: 1px dashed rgba(0, 0, 0, 0.1);
+	border-right: 1px dashed rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+	transform: rotate(90deg);
+}
+
+/* Правая прозрачная ленточка */
+.tape:after{
+	content: '';
+	position:absolute;
+	width: 130px;
+	height: 40px;
+	background:rgba(0, 0, 0, 0.1);
+	background: gradient(linear, 555% 20%, 0% 92%, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.0)), color-stop(.1,rgba(0, 0, 0, 0.2)));
+	background: -moz-linear-gradient(555% 0% 180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.2) 10%, rgba(0,0,0,0.0));
+	border-left: 1px dashed rgba(0, 0, 0, 0.1);
+	border-right: 1px dashed rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+	transform: rotate(90deg);
 }

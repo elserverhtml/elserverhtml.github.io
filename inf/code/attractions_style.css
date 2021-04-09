@@ -1,0 +1,117 @@
+body {
+    background: rgb(235, 255, 253);
+}
+
+header {
+    background: rgb(12, 222, 203);
+    box-shadow: 0px 3px 4px rgb(44, 165, 155);
+}
+
+header p {
+    background-color: rgb(44, 165, 155);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cell{
+	width: 1000px;
+    left: -10%;
+	background-color: #FFF;
+	position: relative;
+    margin: 60px 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Condensed', sans-serif; 
+	box-shadow: inset 6px 6px 8px 0 rgba(0,0,0,0.4);
+}
+
+.cell:nth-child(2n) {
+    left: 10%;
+}
+.cell:after, 
+.cell:before {
+	mix-blend-mode:multiply;
+	filter:none;
+	z-index: -1;
+	content:'';
+	width: calc(100% + 90px);
+	height: calc(100% + 90px);
+	position: absolute;
+	animation: anim 8s ease-in-out infinite;
+}
+@keyframes anim {
+	0%, 100% {
+		clip-path: polygon(0 0, calc(100% - (33px)) calc(0% + (33px)), 100% 100%, calc(0% + (33px)) calc(100% - (33px)));
+	}
+	50% {
+		clip-path: polygon(calc(0% + (33px)) calc(0% + (33px)), 100% 0, calc(100% - (33px)) calc(100% - (33px)), 0 100%);
+	}
+}
+.cell:after{
+	animation-delay: -5s;
+	background-color: #BFE2FF;
+	clip-path: polygon(0 0, calc(100% - (33px)) calc(0% + (33px)), 100% 100%, calc(0% + (33px)) calc(100% - (33px)));
+}
+.cell:before {
+	background-color: #337AB7;
+	clip-path: polygon(calc(0% + (33px)) calc(0% + (33px)), 100% 0, calc(100% - (33px)) calc(100% - (33px)), 0 100%);
+}
+
+.card {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 400px;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.infoText {
+    position: relative;
+    width: 504px;
+    left: 10px;
+    top: 10px;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: var(--main-red) dotted 6px;
+    margin-bottom: 20px;
+}
+
+.infoText p {
+    font-weight: 600;
+}
+
+.photo {
+    margin: 20px 0 0;
+    display: flex;
+    justify-content:center;
+}
+
+.photo img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.discription {
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.discription p {
+    margin: 5px;
+}
+
+.container1 {
+    display: flex;
+    flex-direction:row;
+    width: 100%;
