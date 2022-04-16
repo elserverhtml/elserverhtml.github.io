@@ -164,8 +164,7 @@ ARTICLE {
 
 .entryName span {
     font-family: 'Lobster', cursive;
-    font-size: 48px;
-    text-align: center;
+    font-size: 3.3vw;
 }
 
 .entryBtns {
@@ -217,7 +216,7 @@ ARTICLE {
 }
 
 .entryBtn:nth-child(1){
-    background: url(project_img/0-1.jpg) center center no-repeat;
+    background: url(images/Entry/1.jpg) center center no-repeat;
     background-position: 50% 26%;
     background-size: 100%;
     
