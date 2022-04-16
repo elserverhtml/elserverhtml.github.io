@@ -186,7 +186,7 @@ ARTICLE {
 
 .entryBtns span {
     position: relative;
-    font-size: 70px;
+    font-size: 80px;
     font-weight: 900;
     color: #333;
     filter: none;
@@ -229,7 +229,7 @@ ARTICLE {
 }
 
 .entryBtn:nth-child(3){
-    background: url(images/Entry/3.jpg) center center no-repeat;
+    background: url(project_img/0-3.jpg) center center no-repeat;
     background-position: 50% 28%;
     background-size: 100%;
     
@@ -285,6 +285,7 @@ biography {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .nameOfBiography span{
